@@ -1,0 +1,12 @@
+asd
+asda
+zxczx
+lol
+#include "syscall.h"
+
+int main()
+{
+	char c;
+	c = ReadChar();
+	PrintChar(c);
+}

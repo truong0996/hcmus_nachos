@@ -31,12 +31,12 @@
 #define SC_Yield	10
 //Syscall ho tro user mode doc, in ky tu, so integer, chuoi
 #define SC_ReadChar	11
-/*#define SC_PrintChar
-#define SC_ReadInt
-#define SC_PrintInt
-#define SC_ReadString
-#define SC_PrintString
-*/
+#define SC_PrintChar	12
+#define SC_ReadInt	13
+#define SC_PrintInt	14
+#define SC_ReadString	15
+#define SC_PrintString	16
+
 
 #ifndef IN_ASM
 
@@ -135,6 +135,11 @@ void Yield();
 //------------------------
 // Ham cho user su dung
 char ReadChar();
+void PrintChar(char c);
+int ReadInt();
+void PrintInt(int x);
+void ReadString(char buffer[], int length);
+void PrintString(char buffer[]);
 
 //------------------------
 #endif /* IN_ASM */

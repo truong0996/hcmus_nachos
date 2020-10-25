@@ -1,0 +1,9 @@
+#include <syscall.h>
+
+int main()
+{
+	char* str;
+	int length;
+	length = 10;
+	
+}

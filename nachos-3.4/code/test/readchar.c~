@@ -2,5 +2,7 @@
 
 int main()
 {
-	ReadChar();
+	char c;
+	c = ReadChar();
+	
 }
