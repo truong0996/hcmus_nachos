@@ -1,0 +1,8 @@
+include "syscall.h"
+
+int main()
+{
+
+	Create("TruongDepTrai.txt");
+	return 0;
+}

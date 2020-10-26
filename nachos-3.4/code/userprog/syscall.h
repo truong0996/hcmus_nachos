@@ -22,6 +22,7 @@
 #define SC_Exit		1
 #define SC_Exec		2
 #define SC_Join		3
+//syscall ho tro thao tac voi tep tin
 #define SC_Create	4
 #define SC_Open		5
 #define SC_Read		6

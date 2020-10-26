@@ -22,6 +22,7 @@
 #define SC_Exit		1
 #define SC_Exec		2
 #define SC_Join		3
+//syscall ho tro thao tac voi tep tin
 #define SC_Create	4
 #define SC_Open		5
 #define SC_Read		6
@@ -34,9 +35,9 @@
 #define SC_PrintChar	12
 #define SC_ReadInt	13
 #define SC_PrintInt	14
-/*#define SC_ReadString
-#define SC_PrintString
-*/
+#define SC_ReadString	15
+#define SC_PrintString	16
+
 
 #ifndef IN_ASM
 
