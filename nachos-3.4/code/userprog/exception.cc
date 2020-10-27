@@ -338,7 +338,7 @@ ExceptionHandler(ExceptionType which)
 				case SC_Create:
 					{
 						//input: La dia chi vung nho cua ten file
-                        // output: Tra ve ket qua: -1 = khong tao duoc file, 0 = tao thanh cong
+						// output: Tra ve ket qua: -1 = khong tao duoc file, 0 = tao thanh cong
 						int virtAddr;
 						char* filename;
 						DEBUG('a',"\n SC_Create call ...");
@@ -353,7 +353,7 @@ ExceptionHandler(ExceptionType which)
 							DEBUG('a',"\n Not enough memory in system");
 							machine->WriteRegister(2,-1); //tra ve ket qua -1. Khong doc duoc
 							delete filename;
-                            IncreasePC();
+							IncreasePC();
 							return;
 							break;
 						}
@@ -363,13 +363,13 @@ ExceptionHandler(ExceptionType which)
 							printf("\n Error create file '%s'",filename);
 							machine->WriteRegister(2,-1);
 							delete filename;
-                            IncreasePC();
+							IncreasePC();
 							return;
 							break;
 						}
 						machine->WriteRegister(2,0); // Tao file thanh cong, tra ve 0
 						delete filename;
-                        IncreasePC();
+						IncreasePC();
 						return;
 						break;
 					}
