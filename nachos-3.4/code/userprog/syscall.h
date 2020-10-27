@@ -37,6 +37,7 @@
 #define SC_PrintInt	14
 #define SC_ReadString	15
 #define SC_PrintString	16
+#define SC_Seek		17
 
 
 #ifndef IN_ASM
@@ -117,6 +118,9 @@ int Read(char *buffer, int size, OpenFileId id);
 /* Close the file, we're done reading and writing to it. */
 void Close(OpenFileId id);
 
+// Ham seek file
+int Seek(int pos, OpenFileId id);
+
 
 
 /* User-level thread operations: Fork and Yield.  To allow multiple
@@ -136,10 +140,15 @@ void Yield();
 //------------------------
 // Ham cho user su dung
 char ReadChar();
+
 void PrintChar(char c);
+
 int ReadInt();
+
 void PrintInt(int x);
+
 void ReadString(char buffer[], int length);
+
 void PrintString(char buffer[]);
 
 //------------------------
