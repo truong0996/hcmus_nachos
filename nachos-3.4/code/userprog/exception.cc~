@@ -411,12 +411,12 @@ ExceptionHandler(ExceptionType which)
 							break;
 						}
 						machine->WriteRegister(2, -1); //Khong mo duoc file return -1
-		
+						IncreasePC();
 						delete[] filename;
 						break;
 					}
 
-					case SC_Close:
+				case SC_Close:
 					{
 						//Input id cua file(OpenFileID)
 						// Output: 0: thanh cong, -1 that bai
@@ -428,10 +428,12 @@ ExceptionHandler(ExceptionType which)
 								delete fileSystem->openf[fid]; //Xoa vung nho luu tru file
 								fileSystem->openf[fid] = NULL; //Gan vung nho NULL
 								machine->WriteRegister(2, 0);
+IncreasePC();
 								break;
 							}
 						}
 						machine->WriteRegister(2, -1);
+IncreasePC();
 						break;
 					}
 

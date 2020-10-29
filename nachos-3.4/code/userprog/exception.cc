@@ -407,11 +407,12 @@ ExceptionHandler(ExceptionType which)
 							{
 								machine->WriteRegister(2, 1); //tra ve OpenFileID
 							}
+							IncreasePC();
 							delete[] filename;
 							break;
 						}
 						machine->WriteRegister(2, -1); //Khong mo duoc file return -1
-		
+						IncreasePC();
 						delete[] filename;
 						break;
 					}
@@ -428,10 +429,12 @@ ExceptionHandler(ExceptionType which)
 								delete fileSystem->openf[fid]; //Xoa vung nho luu tru file
 								fileSystem->openf[fid] = NULL; //Gan vung nho NULL
 								machine->WriteRegister(2, 0);
+								IncreasePC();
 								break;
 							}
 						}
 						machine->WriteRegister(2, -1);
+						IncreasePC();
 						break;
 					}
 
