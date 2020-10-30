@@ -386,8 +386,6 @@ ExceptionHandler(ExceptionType which)
 						char* filename;
 						filename = User2System(virtAddr, MaxFileLength); // Copy chuoi tu vung nho User Space sang System Space voi bo dem name dai MaxFileLength
 						//Kiem tra xem OS con mo dc file khong
-		
-						// update 4/1/2018
 						int freeSlot = fileSystem->FindFreeSlot();
 						if (freeSlot != -1) //Chi xu li khi con slot trong
 						{
@@ -422,7 +420,7 @@ ExceptionHandler(ExceptionType which)
 						//Input id cua file(OpenFileID)
 						// Output: 0: thanh cong, -1 that bai
 						int fid = machine->ReadRegister(4); // Lay id cua file tu thanh ghi so 4
-						if (fid >= 0 && fid <= 14) //Chi xu li khi fid nam trong [0, 14]
+						if (fid >= 0 && fid <= 10) //Chi xu li khi fid nam trong [0, 10]
 						{
 							if (fileSystem->openf[fid]) //neu mo file thanh cong
 							{
