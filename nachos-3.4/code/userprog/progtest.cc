@@ -20,8 +20,20 @@
 //	memory, and jump to it.
 //----------------------------------------------------------------------
 
-void
-StartProcess(char *filename)
+void StartProcess_2(AddrSpace *space)
+{
+
+  	currentThread->space = space;
+    space->InitRegisters();		// set the initial register values
+    space->RestoreState();		// load page table register
+
+    machine->Run();			// jump to the user progam
+    ASSERT(FALSE);			// machine->Run never returns;
+					// the address space exits
+					// by doing the syscall "exit"
+}
+
+void StartProcess(char *filename)
 {
     OpenFile *executable = fileSystem->Open(filename);
     AddrSpace *space;
